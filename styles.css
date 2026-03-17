@@ -35,6 +35,9 @@ html, body {
     filter: blur(120px);
     z-index: 0;
     pointer-events: none;
+    /* Safari GPU Optimization */
+    transform: translateZ(0);
+    will-change: filter, transform;
 }
 .blob-1 {
     top: -150px;
@@ -265,13 +268,8 @@ h1, h2, h3 {
     color: var(--text-secondary);
 }
 
-/* Testimonial Grid (Replaces Mockup) */
-.hero-testimonials {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
+.testimonial-stack:hover {
+    animation-play-state: paused;
 }
 
 .testimonial-arrow {
@@ -292,8 +290,14 @@ h1, h2, h3 {
     50% { transform: translateX(10px) rotate(0deg); }
 }
 
-.testimonial-stack:hover {
-    animation-play-state: paused;
+.hero-testimonials {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    /* Safari Performance */
+    transform: translate3d(0, 0, 0);
 }
 
 .test-card {
