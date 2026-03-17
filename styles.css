@@ -16,13 +16,16 @@
     box-sizing: border-box;
 }
 
-body {
+html, body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
     background-color: var(--bg-color);
     color: var(--text-primary);
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
-    overflow-x: hidden;
-    position: relative;
 }
 
 /* Background Gradients / Blobs */
@@ -301,18 +304,20 @@ h1, h2, h3 {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--border-color);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    background: transparent;
+    border: none;
+    transition: transform 0.3s ease;
 }
 
 .test-card:hover {
     transform: translateY(-5px);
-    border-color: rgba(0, 242, 254, 0.3);
+    box-shadow: 0 15px 35px rgba(0, 242, 254, 0.2);
 }
 
 .test-card img {
     width: 100%;
-    height: 100%;
+    height: calc(100% + 2px);
+    margin-top: -2px;
     object-fit: fill;
     display: block;
 }
