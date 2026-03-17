@@ -282,7 +282,7 @@ h1, h2, h3 {
     height: 80px;
     opacity: 0.9;
     z-index: 10;
-    filter: drop-shadow(0 0 8px rgba(79, 172, 254, 1)) drop-shadow(0 0 20px rgba(79, 172, 254, 0.6));
+    filter: drop-shadow(0 0 8px rgba(107, 197, 255, 1)) drop-shadow(0 0 20px rgba(107, 197, 255, 0.6));
     animation: point 3s ease-in-out infinite;
     transform: rotate(0deg);
 }
