@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Novah Edge | Master the Markets</title>
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+
+    <nav class="navbar">
+        <div class="logo">
+            The Novah <span class="gradient-text">Edge</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#mentorship">Mentorship</a></li>
+        </ul>
+        <button class="btn btn-primary open-modal">Join Waitlist</button>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                Master The <span class="gradient-text">Novah Edge.</span> <br /> Master Your Mind.
+            </h1>
+            <p class="hero-subtitle">
+                Discover The Novah Edge - the exact path that took us from emotional and unprofitable to consistently disciplined and profitable. We work with traders at every level 1-on-1 to structurally break bad habits and build new, winning ones.
+            </p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary open-modal">Join Waitlist</button>
+                <a href="#features" class="btn btn-secondary">Explore Features</a>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span class="stat-number">Multiple</span>
+                    <span class="stat-label">Private Weekly Calls</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">Daily</span>
+                    <span class="stat-label">Accountability</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">80%</span>
+                    <span class="stat-label">Win Rate</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-testimonials">
+            <img src="assets/neon_arrow.svg" alt="Look at our results" class="testimonial-arrow" />
+            <div class="testimonial-stack">
+                <div class="test-card card-1"><img src="assets/testimonial.png" alt="Student Testimonial" /></div>
+                <div class="test-card card-2"><img src="assets/payout.jpg" alt="Payout Proof" /></div>
+            </div>
+        </div>
+    </header>
+
+    <section id="features" class="features-section">
+        <div class="section-header">
+            <h2>Everything you need to <span class="gradient-text">succeed</span></h2>
+            <p>We provide the model, accountability and honest feedback you need to elevate your trading journey.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card glass-card">
+                <div class="feature-icon">🧠</div>
+                <h3>Master Your Emotions</h3>
+                <p>Trading is 80% psychology. We teach you how to manage your emotions, prevent spiraling on red days, and execute our model without hesitation.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">📈</div>
+                <h3>The Novah Model</h3>
+                <p>Stop guessing. We provide you with the exact mechanical model we use to get multiple payouts each month - built for simplicity and consistency.</p>
+            </div>
+            <div class="feature-card glass-card">
+                <div class="feature-icon">🤝</div>
+                <h3>Intense 1-on-1 Mentorship</h3>
+                <p>You aren't just another member in our server. Get aggressive and personalized feedback on your trades, psychology, and daily journals directly from us.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bottom CTA -->
+    <section id="join" class="cta-section">
+        <div class="glass-card cta-card">
+            <h2>Ready to change your trading career?</h2>
+            <p>Spots in our premium mentorship are strictly limited to ensure quality 1-on-1 time.</p>
+            <button class="btn btn-primary open-modal" style="font-size: 1.2rem; padding: 16px 32px;">Secure Your Spot</button>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <img src="assets/new founder.png" alt="Mentors" class="founders-img footer-founders">
+            <p>© 2026 The Novah Edge. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Lead Capture Modal (Hidden by default) -->
+    <div class="modal-overlay" id="waitlistModal">
+        <div class="modal-content glass-card" style="padding: 2.5rem; width: 90%; max-width: 450px;">
+            <button class="modal-close" id="closeModal">&times;</button>
+            <div class="modal-header" style="text-align: center;">
+                <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Join The Waitlist</h2>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">Enter your details below to secure your early access spot.</p>
+            </div>
+            
+            <form class="lead-form" id="leadForm">
+                <div class="form-group">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                </div>
+                <button type="submit" class="btn btn-submit" id="submitBtn">JOIN WAITLIST</button>
+                <p class="modal-disclaimer">By joining, you agree to receive email updates.</p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
