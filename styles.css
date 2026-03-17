@@ -276,8 +276,8 @@ h1, h2, h3 {
 
 .testimonial-arrow {
     position: absolute;
-    top: 90px;
-    left: -155px;
+    top: 100px;
+    left: -165px;
     width: 80px;
     height: 80px;
     opacity: 0.9;
