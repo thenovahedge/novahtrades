@@ -303,8 +303,8 @@ h1, h2, h3 {
     overflow: hidden;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     background: transparent;
-    border: none;
-    transition: transform 0.2s ease-out;
+    border: 1px solid transparent; /* Reserve space for outline */
+    transition: transform 0.2s ease-out, border-color 0.2s ease-out;
     will-change: transform;
     backface-visibility: hidden;
     transform: translate3d(0, 0, 0); /* Force GPU */
@@ -312,6 +312,7 @@ h1, h2, h3 {
 
 .test-card:hover {
     transform: translate3d(0, -5px, 0);
+    border-color: rgba(0, 242, 254, 0.4); /* Cyan outline like features */
 }
 
 .test-card img {
@@ -569,5 +570,16 @@ footer {
     }
     .nav-links {
         display: none;
+    }
+    .blob-1 {
+        left: -150px;
+        width: 500px;
+        height: 500px;
+    }
+    .blob-2 {
+        right: -100px;
+        top: 45%;
+        width: 400px;
+        height: 400px;
     }
 }
