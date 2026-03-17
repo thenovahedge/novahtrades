@@ -32,22 +32,23 @@ html, body {
 .blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(100px);
-    z-index: -1;
-    opacity: 0.5;
+    filter: blur(120px);
+    z-index: 0;
+    pointer-events: none;
 }
 .blob-1 {
-    top: -10%;
-    left: -10%;
+    top: -150px;
+    left: -150px;
     width: 600px;
     height: 600px;
-    background: radial-gradient(circle, var(--accent-secondary) 0%, transparent 70%);
+    background: radial-gradient(circle, rgba(0, 242, 254, 0.8) 0%, transparent 70%);
+    opacity: 0.7;
 }
 .blob-2 {
-    top: 30%;
+    top: 35%;
     right: -10%;
-    width: 800px;
-    height: 800px;
+    width: 600px;
+    height: 600px;
     background: radial-gradient(circle, rgba(112, 40, 228, 0.8) 0%, transparent 70%);
     opacity: 0.7;
 }
@@ -137,8 +138,8 @@ h1, h2, h3 {
     position: sticky;
     top: 0;
     z-index: 100;
-    background: rgba(5, 5, 5, 0.6);
-    backdrop-filter: blur(10px);
+    background: rgba(5, 5, 5, 0.4);
+    backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
@@ -197,6 +198,8 @@ h1, h2, h3 {
     padding: 6rem 5% 4rem;
     gap: 4rem;
     min-height: 80vh;
+    position: relative;
+    z-index: 1;
 }
 
 .hero-content {
@@ -292,11 +295,12 @@ h1, h2, h3 {
 .testimonial-stack {
     display: flex;
     flex-direction: column;
-    gap: 0; /* Removing gap to handle fit with margins */
+    gap: 0;
     width: 100%;
     max-width: 480px;
     position: relative;
     animation: float-subtle 8s ease-in-out infinite;
+    will-change: transform;
 }
 
 .test-card {
@@ -307,12 +311,13 @@ h1, h2, h3 {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
     background: transparent;
     border: none;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease-out; /* Snappier transition */
+    will-change: transform;
+    backface-visibility: hidden;
 }
 
 .test-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 242, 254, 0.2);
 }
 
 .test-card img {
@@ -342,6 +347,8 @@ h1, h2, h3 {
 /* Features Section */
 .features-section {
     padding: 6rem 5%;
+    position: relative;
+    z-index: 1;
 }
 
 .section-header {
@@ -393,6 +400,8 @@ h1, h2, h3 {
     padding: 6rem 5%;
     display: flex;
     justify-content: center;
+    position: relative;
+    z-index: 1;
 }
 
 .cta-card {
