@@ -15,6 +15,11 @@ load_dotenv()
 # Load configuration from environment variables
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
+if not BOT_TOKEN:
+    print("❌ CRITICAL ERROR: 'BOT_TOKEN' environment variable is missing!")
+    print("Please add it in your Railway 'Variables' tab.")
+
+
 
 VERIFY_EMOJI        = "📈"
 
@@ -421,4 +426,11 @@ async def on_raw_reaction_remove(payload: discord.RawReactionActionEvent):
 
 
 if __name__ == "__main__":
-    bot.run(BOT_TOKEN)
+    if not BOT_TOKEN:
+        print("❌ Cannot start bot: No token found.")
+    else:
+        try:
+            bot.run(BOT_TOKEN)
+        except Exception as e:
+            print(f"❌ CRITICAL CRASH: {e}")
+
