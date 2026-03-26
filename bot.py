@@ -15,11 +15,6 @@ load_dotenv()
 # Load configuration from environment variables
 BOT_TOKEN = os.getenv("BOT_TOKEN")
 
-if not BOT_TOKEN:
-    print("❌ CRITICAL ERROR: 'BOT_TOKEN' environment variable is missing!")
-    print("Please add it in your Railway 'Variables' tab.")
-
-
 
 VERIFY_EMOJI        = "📈"
 
@@ -111,27 +106,33 @@ def load_config():
 # ══════════════════════════════════════════════
 @bot.event
 async def on_ready():
+    global verify_message_id
     print(f"✅ Bot logged in as {bot.user}")
-    # Load message ID from environment variable or JSON file
+    
+    # Priority 1: Environment Variable
     env_id = os.getenv("VERIFY_MESSAGE_ID")
     if env_id:
         try:
-            bot.verify_message_id = int(env_id)
-            print(f"📊 Monitoring verification message ID (from ENV): {bot.verify_message_id}")
+            verify_message_id = int(env_id)
+            print(f"📊 Monitoring verification message ID (from ENV): {verify_message_id}")
         except ValueError:
             print("⚠️ INVALID VERIFY_MESSAGE_ID in environment variables.")
     
-    if not bot.verify_message_id:
-        try:
-            with open("bot_config.json", "r") as f:
-                config = json.load(f)
-                bot.verify_message_id = config.get("verify_message_id")
-                if bot.verify_message_id:
-                    print(f"📊 Monitoring verification message ID (from JSON): {bot.verify_message_id}")
-                else:
-                    print("📊 No verification message ID found in JSON. Run !setup to initialize.")
-        except FileNotFoundError:
-            print("📊 No verification message ID found. Run !setup to initialize.")
+    # Priority 2: local JSON file
+    if not verify_message_id:
+        if os.path.exists(CONFIG_FILE):
+            try:
+                with open(CONFIG_FILE, "r") as f:
+                    data = json.load(f)
+                    verify_message_id = data.get("verify_message_id")
+                    if verify_message_id:
+                        print(f"📊 Monitoring verification message ID (from JSON): {verify_message_id}")
+            except:
+                pass
+
+    if not verify_message_id:
+        print("📊 No verification message ID found. Run !setup or set VERIFY_MESSAGE_ID.")
+
 
     # --- Update bot username to "Novah" ---
     try:
@@ -426,11 +427,4 @@ async def on_raw_reaction_remove(payload: discord.RawReactionActionEvent):
 
 
 if __name__ == "__main__":
-    if not BOT_TOKEN:
-        print("❌ Cannot start bot: No token found.")
-    else:
-        try:
-            bot.run(BOT_TOKEN)
-        except Exception as e:
-            print(f"❌ CRITICAL CRASH: {e}")
-
+    bot.run(BOT_TOKEN)
