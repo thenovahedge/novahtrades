@@ -25,6 +25,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <script src="https://embed.typeform.com/next/embed.js"></script>
 </head>
 <body>
     <div class="blob blob-1"></div>
@@ -38,7 +39,7 @@
             <li><a href="#features">Features</a></li>
             <li><a href="#mentorship">Mentorship</a></li>
         </ul>
-        <button class="btn btn-primary open-modal">Join Waitlist</button>
+        <button class="btn btn-primary" data-tf-popup="I9z9gyjq">Join Waitlist</button>
     </nav>
 
     <header class="hero">
@@ -50,7 +51,7 @@
                 Discover The Novah Edge - the exact formula that took us from emotional and unprofitable to consistently disciplined and profitable. We work with traders at every level 1-on-1 to structurally break bad habits and build new, winning ones.
             </p>
             <div class="hero-buttons">
-                <button class="btn btn-primary open-modal">Join Waitlist</button>
+                <button class="btn btn-primary" data-tf-popup="I9z9gyjq">Join Waitlist</button>
                 <a href="#features" class="btn btn-secondary">Explore Features</a>
             </div>
             <div class="stats">
@@ -106,7 +107,7 @@
         <div class="glass-card cta-card">
             <h2>Ready to change your trading career?</h2>
             <p>Spots in our premium mentorship are strictly limited to ensure quality 1-on-1 time.</p>
-            <button class="btn btn-primary open-modal" style="font-size: 1.2rem; padding: 16px 32px;">Secure Your Spot</button>
+            <button class="btn btn-primary" data-tf-popup="I9z9gyjq" style="font-size: 1.2rem; padding: 16px 32px;">Secure Your Spot</button>
         </div>
     </section>
 
@@ -117,33 +118,6 @@
         </div>
     </footer>
 
-    <!-- Lead Capture Modal (Hidden by default) -->
-    <div class="modal-overlay" id="waitlistModal">
-        <div class="modal-content glass-card" style="padding: 2.5rem; width: 90%; max-width: 450px;">
-            <button class="modal-close" id="closeModal">&times;</button>
-            <div class="modal-header" style="text-align: center;">
-                <h2 style="font-size: 1.8rem; margin-bottom: 0.5rem; font-family: 'Outfit', sans-serif;">Join The Waitlist</h2>
-                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 2rem;">Enter your details below to secure your early access spot.</p>
-            </div>
-            
-            <form class="lead-form" id="leadForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" placeholder="John Doe" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone Number</label>
-                    <input type="tel" id="phone" name="phone" placeholder="+1 (555) 000-0000" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="john@example.com" required>
-                </div>
-                <button type="submit" class="btn btn-submit" id="submitBtn">JOIN WAITLIST</button>
-                <p class="modal-disclaimer">By joining, you agree to receive emails and text messages.</p>
-            </form>
-        </div>
-    </div>
 
     <script src="script.js"></script>
 </body>
